@@ -1,0 +1,504 @@
+/* ==========================================================================
+   TEXTOS — todos los textos de la página, en un único objeto.
+   Para cambiar un dato, se cambia aquí y se cambia en los tres idiomas.
+   Las traducciones al inglés y al alemán son un BORRADOR: hay que revisarlas
+   antes de publicar. «POR CONFIRMAR» marca lo que falta por confirmar.
+   La clave "wa" contiene los textos del mensaje de WhatsApp, que va siempre
+   en español porque lo lee la operadora.
+   ========================================================================== */
+window.SANTELMO_I18N = {
+
+  /* ------------------------------------------------------------ ESPAÑOL */
+  es: {
+    htmlTitle: "San Telmo Servicios · Taxi, taller y gasolinera en Puerto de la Cruz",
+    tagline: "Taxi · Taller · Gasolinera",
+    langLabel: "Idioma",
+    pending: "POR CONFIRMAR",
+    sample: "Ejemplo",
+
+    nowTitle: "Pedir taxi ahora",
+    callBtn: "Llamar a la central · 24 h",
+    appBtn: "Pedir con la app",
+    appPending: "Falta el enlace de la app de taxis.",
+
+    bookTitle: "Reservar para otro día",
+    bookIntro: "Rellene los datos y pulse «Enviar». Se abrirá WhatsApp con su reserva ya escrita; solo tiene que pulsar enviar en WhatsApp.",
+    fService: "Tipo de servicio",
+    serviceChoose: "Elija una opción",
+    services: {
+      airportN: "Traslado Aeropuerto Norte",
+      airportS: "Traslado Aeropuerto Sur",
+      port: "Traslado Puerto",
+      tour: "Ruta turística",
+      event: "Boda o evento",
+      other: "Otro"
+    },
+    fPickup: "Recogida",
+    phPickup: "Hotel, calle o lugar de recogida",
+    fDropoff: "Destino",
+    phDropoff: "Adónde van",
+    fDate: "Día",
+    fTime: "Hora",
+    fPeople: "Personas",
+    fBags: "Maletas",
+    fFlight: "Número de vuelo",
+    phFlight: "Ej.: XX 1234",
+    fExtras: "Extras",
+    extras: {
+      seat: "Silla de niño",
+      adapted: "Vehículo adaptado",
+      large: "Vehículo grande (hasta 8 plazas)"
+    },
+    fName: "Nombre",
+    fPhone: "Teléfono",
+    phPhone: "Con prefijo, ej.: +34 600 000 000",
+    fComments: "Comentarios (opcional)",
+    phComments: "Cualquier cosa que debamos saber",
+    submit: "Enviar",
+    bookNote: "La central recibe su solicitud por WhatsApp. La reserva queda confirmada cuando la central se lo comunique.",
+    errMissing: "Falta por completar:",
+    errNoWa: "POR CONFIRMAR: falta el número de WhatsApp de la central. En la demo, añada ?wa=34XXXXXXXXX a la dirección de la página.",
+    openingWa: "Abriendo WhatsApp…",
+    openWaLink: "Si no se abre, pulse aquí",
+
+    servicesTitle: "Servicios de taxi",
+    servicesList: [
+      "Traslados a puertos y aeropuertos",
+      "Bodas, congresos y traslados escolares",
+      "Rutas turísticas con conductor",
+      "Reservas para cualquier servicio"
+    ],
+    fleetTitle: "Nuestra flota",
+    fleetList: [
+      "Vehículos de 4 a 8 plazas",
+      "Vehículos adaptados para personas con movilidad reducida",
+      "Aire acondicionado",
+      "Sistemas de retención infantil",
+      "Pago con tarjeta",
+      "Conductores uniformados"
+    ],
+    photoFleet: "FOTO: flota",
+
+    ratesTitle: "Tarifas al aeropuerto",
+    rateNorth: "Puerto de la Cruz – Aeropuerto Norte",
+    rateSouth: "Puerto de la Cruz – Aeropuerto Sur",
+    from: "desde",
+    ratesNotice: "Precios aproximados por vehículo, regulados por taxímetro.",
+
+    routesTitle: "Rutas turísticas",
+    routesIntro: "Con conductor exclusivo. Usted puede definir el trayecto o pedir asesoramiento.",
+    routesSample: "Rutas de ejemplo, pendientes de que la central las apruebe.",
+    routes: { teide: "Teide", anaga: "Anaga", garachico: "Garachico", masca: "Masca" },
+    routeExample: "Ruta de ejemplo",
+    routeDuration: "Duración: POR CONFIRMAR",
+    routeBtn: "Pedir precio por WhatsApp",
+    photoRoute: "FOTO",
+
+    faqTitle: "Preguntas frecuentes",
+    faq: [
+      { q: "¿Cuánto cuesta ir al aeropuerto?", a: "Desde 30 € al Aeropuerto Norte y desde 100 € al Aeropuerto Sur. Son precios aproximados por vehículo, regulados por taxímetro." },
+      { q: "¿Puedo pagar con tarjeta?", a: "Sí." },
+      { q: "¿Tienen coches grandes, adaptados o con silla de niño?", a: "Sí. Hay vehículos de 4 a 8 plazas, vehículos adaptados para personas con movilidad reducida y sistemas de retención infantil. Se piden al hacer la reserva." },
+      { q: "¿Funcionan de noche?", a: "Sí, el taxi funciona las 24 horas. Si necesita un taxi ahora, llame a la central." },
+      { q: "¿Cómo reservo para otro día?", a: "Con el formulario de esta página. La reserva llega a la central por WhatsApp." },
+      { q: "¿Hacen excursiones por la isla?", a: "Sí. El precio se pide por WhatsApp." },
+      { q: "¿Cuánto tardan en confirmar una reserva?", pending: true },
+      { q: "¿Con cuánta antelación hay que reservar?", pending: true }
+    ],
+
+    centralTitle: "Así le llega a la central",
+    centralQ: [
+      { q: "¿Dónde llega?", a: "Al WhatsApp de la central." },
+      { q: "¿Quién lo ve?", a: "La operadora." },
+      { q: "¿Quién lo tramita?", a: "La operadora, que lo pasa a su programa de taxis como hace hoy." }
+    ],
+    centralLine: "Lo recibe la central en su WhatsApp, ya ordenado. La operadora lo pasa a su programa como hace hoy, sin tener que preguntar nada.",
+    centralExample: "Ejemplo de reserva tal como la ve la operadora",
+    centralSpanish: "El mensaje siempre llega en español, aunque usted use la página en otro idioma.",
+
+    shopTitle: "Taller y gasolineras",
+    hoursTitle: "Horarios",
+    hoursTaxi: "Taxi: 24 horas",
+    hoursStations: "Gasolineras: lunes a viernes 6:00–23:00 · sábados 7:00–23:00 · domingos y festivos 7:00–22:00",
+    hoursWorkshop: "Taller y repuestos: lunes a viernes 8:00–16:00",
+    workshopName: "Taller mecánico Las Arenas",
+    workshopServices: "Mecánica general, electricidad y electrónica, todas las marcas.",
+    workshopTaxis: "Para taxis: taxímetros e impresoras, gestión de flota, luminosos y actualización de tarifas.",
+    stationsName: "Gasolineras",
+    stationsServices: "Carburante, lavado, productos para el coche, bebidas y aperitivos.",
+    stationTrompo: "E.S. BP El Trompo (La Orotava)",
+    stationLasArenas: "BP Las Arenas",
+    stationLasArenasNote: "Teléfono y dirección",
+    phoneWorkshop: "Taller (cita previa)",
+    phoneGeneral: "Teléfono general",
+    apptTitle: "Cita previa del taller",
+    fPlate: "Matrícula",
+    fNeed: "Qué necesita",
+    phNeed: "Ej.: revisión, ruido en el motor…",
+    fDay: "Día que le viene bien",
+    phDay: "Ej.: el lunes por la mañana",
+    apptBtn: "Pedir cita por WhatsApp",
+
+    footAddress: "Dirección",
+    footMap: "Cómo llegar (mapa)",
+    footDisclaimer: "Maqueta de propuesta. No es la web oficial de San Telmo Servicios",
+
+    barCall: "Llamar",
+    barWa: "WhatsApp",
+    barBook: "Reservar",
+
+    sticker: { title: "Información y reservas", brand: "Taxi San Telmo" }
+  },
+
+  /* -------------------------------------------------------------- ENGLISH */
+  en: {
+    htmlTitle: "San Telmo Servicios · Taxi, workshop and petrol station in Puerto de la Cruz",
+    tagline: "Taxi · Workshop · Petrol station",
+    langLabel: "Language",
+    pending: "POR CONFIRMAR",
+    sample: "Example",
+
+    nowTitle: "Order a taxi now",
+    callBtn: "Call the taxi office · 24 h",
+    appBtn: "Order with the app",
+    appPending: "The taxi app link is missing.",
+
+    bookTitle: "Book for another day",
+    bookIntro: "Fill in your details and press “Send”. WhatsApp will open with your booking already written; you only need to press send in WhatsApp.",
+    fService: "Type of service",
+    serviceChoose: "Choose an option",
+    services: {
+      airportN: "Transfer – North Airport",
+      airportS: "Transfer – South Airport",
+      port: "Transfer – Port",
+      tour: "Tourist route",
+      event: "Wedding or event",
+      other: "Other"
+    },
+    fPickup: "Pick-up",
+    phPickup: "Hotel, street or pick-up place",
+    fDropoff: "Destination",
+    phDropoff: "Where are you going?",
+    fDate: "Date",
+    fTime: "Time",
+    fPeople: "Passengers",
+    fBags: "Suitcases",
+    fFlight: "Flight number",
+    phFlight: "E.g. XX 1234",
+    fExtras: "Extras",
+    extras: {
+      seat: "Child seat",
+      adapted: "Adapted vehicle",
+      large: "Large vehicle (up to 8 seats)"
+    },
+    fName: "Name",
+    fPhone: "Phone",
+    phPhone: "With country code, e.g. +49 000 000000",
+    fComments: "Comments (optional)",
+    phComments: "Anything we should know",
+    submit: "Send",
+    bookNote: "The taxi office receives your request on WhatsApp. The booking is confirmed once the office tells you so.",
+    errMissing: "Please complete:",
+    errNoWa: "POR CONFIRMAR: the taxi office WhatsApp number is missing. For the demo, add ?wa=34XXXXXXXXX to the page address.",
+    openingWa: "Opening WhatsApp…",
+    openWaLink: "If it does not open, tap here",
+
+    servicesTitle: "Taxi services",
+    servicesList: [
+      "Transfers to ports and airports",
+      "Weddings, conferences and school transport",
+      "Tourist routes with a driver",
+      "Bookings for any service"
+    ],
+    fleetTitle: "Our fleet",
+    fleetList: [
+      "Vehicles with 4 to 8 seats",
+      "Vehicles adapted for people with reduced mobility",
+      "Air conditioning",
+      "Child restraint systems",
+      "Card payment",
+      "Uniformed drivers"
+    ],
+    photoFleet: "FOTO: flota",
+
+    ratesTitle: "Airport fares",
+    rateNorth: "Puerto de la Cruz – North Airport",
+    rateSouth: "Puerto de la Cruz – South Airport",
+    from: "from",
+    ratesNotice: "Approximate prices per vehicle, regulated by the taximeter.",
+
+    routesTitle: "Tourist routes",
+    routesIntro: "With your own private driver. You can choose the route or ask for advice.",
+    routesSample: "Example routes, pending approval by the taxi office.",
+    routes: { teide: "Teide", anaga: "Anaga", garachico: "Garachico", masca: "Masca" },
+    routeExample: "Example route",
+    routeDuration: "Duration: POR CONFIRMAR",
+    routeBtn: "Ask for a price on WhatsApp",
+    photoRoute: "FOTO",
+
+    faqTitle: "Frequently asked questions",
+    faq: [
+      { q: "How much does it cost to go to the airport?", a: "From €30 to the North Airport and from €100 to the South Airport. These are approximate prices per vehicle, regulated by the taximeter." },
+      { q: "Can I pay by card?", a: "Yes." },
+      { q: "Do you have large cars, adapted cars or child seats?", a: "Yes. There are vehicles with 4 to 8 seats, vehicles adapted for people with reduced mobility and child restraint systems. Ask for them when you book." },
+      { q: "Do you work at night?", a: "Yes, the taxi service runs 24 hours. If you need a taxi right now, call the taxi office." },
+      { q: "How do I book for another day?", a: "With the form on this page. The booking reaches the taxi office on WhatsApp." },
+      { q: "Do you offer trips around the island?", a: "Yes. Ask for the price on WhatsApp." },
+      { q: "How long does it take to confirm a booking?", pending: true },
+      { q: "How far in advance do I need to book?", pending: true }
+    ],
+
+    centralTitle: "How it reaches the taxi office",
+    centralQ: [
+      { q: "Where does it arrive?", a: "On the taxi office’s WhatsApp." },
+      { q: "Who sees it?", a: "The operator." },
+      { q: "Who handles it?", a: "The operator, who enters it into the taxi system as they do today." }
+    ],
+    centralLine: "The taxi office receives it on its WhatsApp, already organised. The operator enters it into the taxi system as they do today, without having to ask anything.",
+    centralExample: "Example booking as the operator sees it",
+    centralSpanish: "The message always arrives in Spanish, even if you use this page in another language.",
+
+    shopTitle: "Workshop and petrol stations",
+    hoursTitle: "Opening hours",
+    hoursTaxi: "Taxi: 24 hours",
+    hoursStations: "Petrol stations: Monday to Friday 6:00–23:00 · Saturday 7:00–23:00 · Sundays and public holidays 7:00–22:00",
+    hoursWorkshop: "Workshop and spare parts: Monday to Friday 8:00–16:00",
+    workshopName: "Las Arenas mechanic’s workshop",
+    workshopServices: "General mechanics, electrics and electronics, all makes.",
+    workshopTaxis: "For taxis: taximeters and printers, fleet management, roof lights and fare updates.",
+    stationsName: "Petrol stations",
+    stationsServices: "Fuel, car wash, car products, drinks and snacks.",
+    stationTrompo: "BP El Trompo service station (La Orotava)",
+    stationLasArenas: "BP Las Arenas",
+    stationLasArenasNote: "Phone and address",
+    phoneWorkshop: "Workshop (appointments)",
+    phoneGeneral: "General phone",
+    apptTitle: "Workshop appointment",
+    fPlate: "Licence plate",
+    fNeed: "What you need",
+    phNeed: "E.g. service, engine noise…",
+    fDay: "Day that suits you",
+    phDay: "E.g. Monday morning",
+    apptBtn: "Ask for an appointment on WhatsApp",
+
+    footAddress: "Address",
+    footMap: "How to get there (map)",
+    footDisclaimer: "Proposal mock-up. This is not the official website of San Telmo Servicios",
+
+    barCall: "Call",
+    barWa: "WhatsApp",
+    barBook: "Book",
+
+    sticker: { title: "Information and bookings", brand: "Taxi San Telmo" }
+  },
+
+  /* -------------------------------------------------------------- DEUTSCH */
+  de: {
+    htmlTitle: "San Telmo Servicios · Taxi, Werkstatt und Tankstelle in Puerto de la Cruz",
+    tagline: "Taxi · Werkstatt · Tankstelle",
+    langLabel: "Sprache",
+    pending: "POR CONFIRMAR",
+    sample: "Beispiel",
+
+    nowTitle: "Jetzt ein Taxi bestellen",
+    callBtn: "Taxizentrale anrufen · 24 Std.",
+    appBtn: "Mit der App bestellen",
+    appPending: "Der Link zur Taxi-App fehlt noch.",
+
+    bookTitle: "Für einen anderen Tag reservieren",
+    bookIntro: "Füllen Sie die Angaben aus und tippen Sie auf „Senden“. WhatsApp öffnet sich mit Ihrer fertig geschriebenen Reservierung; Sie müssen dort nur noch auf Senden tippen.",
+    fService: "Art der Fahrt",
+    serviceChoose: "Bitte wählen",
+    services: {
+      airportN: "Transfer Flughafen Nord",
+      airportS: "Transfer Flughafen Süd",
+      port: "Transfer Hafen",
+      tour: "Touristische Rundfahrt",
+      event: "Hochzeit oder Veranstaltung",
+      other: "Sonstiges"
+    },
+    fPickup: "Abholung",
+    phPickup: "Hotel, Straße oder Abholort",
+    fDropoff: "Ziel",
+    phDropoff: "Wohin soll es gehen?",
+    fDate: "Datum",
+    fTime: "Uhrzeit",
+    fPeople: "Personen",
+    fBags: "Koffer",
+    fFlight: "Flugnummer",
+    phFlight: "z. B. XX 1234",
+    fExtras: "Extras",
+    extras: {
+      seat: "Kindersitz",
+      adapted: "Behindertengerechtes Fahrzeug",
+      large: "Großes Fahrzeug (bis zu 8 Plätze)"
+    },
+    fName: "Name",
+    fPhone: "Telefon",
+    phPhone: "Mit Landesvorwahl, z. B. +49 000 000000",
+    fComments: "Anmerkungen (optional)",
+    phComments: "Alles, was wir wissen sollten",
+    submit: "Senden",
+    bookNote: "Die Taxizentrale erhält Ihre Anfrage per WhatsApp. Die Reservierung gilt als bestätigt, sobald die Zentrale sie Ihnen bestätigt.",
+    errMissing: "Bitte ausfüllen:",
+    errNoWa: "POR CONFIRMAR: Die WhatsApp-Nummer der Taxizentrale fehlt noch. Für die Demo hängen Sie ?wa=34XXXXXXXXX an die Adresse der Seite an.",
+    openingWa: "WhatsApp wird geöffnet …",
+    openWaLink: "Falls es sich nicht öffnet, hier tippen",
+
+    servicesTitle: "Taxi-Leistungen",
+    servicesList: [
+      "Fahrten zu Häfen und Flughäfen",
+      "Hochzeiten, Kongresse und Schülerfahrten",
+      "Touristische Rundfahrten mit Fahrer",
+      "Reservierungen für jede Fahrt"
+    ],
+    fleetTitle: "Unsere Fahrzeuge",
+    fleetList: [
+      "Fahrzeuge mit 4 bis 8 Plätzen",
+      "Fahrzeuge für Menschen mit eingeschränkter Mobilität",
+      "Klimaanlage",
+      "Kinderrückhaltesysteme",
+      "Kartenzahlung",
+      "Fahrer in Uniform"
+    ],
+    photoFleet: "FOTO: flota",
+
+    ratesTitle: "Preise zum Flughafen",
+    rateNorth: "Puerto de la Cruz – Flughafen Nord",
+    rateSouth: "Puerto de la Cruz – Flughafen Süd",
+    from: "ab",
+    ratesNotice: "Ungefähre Preise pro Fahrzeug, nach Taxameter.",
+
+    routesTitle: "Touristische Rundfahrten",
+    routesIntro: "Mit eigenem Fahrer. Sie können die Strecke selbst festlegen oder sich beraten lassen.",
+    routesSample: "Beispielrouten, noch von der Zentrale zu genehmigen.",
+    routes: { teide: "Teide", anaga: "Anaga", garachico: "Garachico", masca: "Masca" },
+    routeExample: "Beispielroute",
+    routeDuration: "Dauer: POR CONFIRMAR",
+    routeBtn: "Preis per WhatsApp anfragen",
+    photoRoute: "FOTO",
+
+    faqTitle: "Häufige Fragen",
+    faq: [
+      { q: "Was kostet die Fahrt zum Flughafen?", a: "Ab 30 € zum Flughafen Nord und ab 100 € zum Flughafen Süd. Das sind ungefähre Preise pro Fahrzeug, nach Taxameter." },
+      { q: "Kann ich mit Karte bezahlen?", a: "Ja." },
+      { q: "Gibt es große Fahrzeuge, behindertengerechte Fahrzeuge oder Kindersitze?", a: "Ja. Es gibt Fahrzeuge mit 4 bis 8 Plätzen, Fahrzeuge für Menschen mit eingeschränkter Mobilität und Kinderrückhaltesysteme. Sie werden bei der Reservierung angefragt." },
+      { q: "Fahren Sie auch nachts?", a: "Ja, der Taxidienst ist rund um die Uhr erreichbar. Wenn Sie sofort ein Taxi brauchen, rufen Sie die Zentrale an." },
+      { q: "Wie reserviere ich für einen anderen Tag?", a: "Mit dem Formular auf dieser Seite. Die Reservierung erreicht die Zentrale per WhatsApp." },
+      { q: "Bieten Sie Ausflüge über die Insel an?", a: "Ja. Den Preis erfragen Sie per WhatsApp." },
+      { q: "Wie lange dauert die Bestätigung einer Reservierung?", pending: true },
+      { q: "Wie früh muss ich reservieren?", pending: true }
+    ],
+
+    centralTitle: "So kommt es bei der Zentrale an",
+    centralQ: [
+      { q: "Wo kommt es an?", a: "Im WhatsApp der Taxizentrale." },
+      { q: "Wer sieht es?", a: "Die Telefonistin." },
+      { q: "Wer bearbeitet es?", a: "Die Telefonistin, die es wie heute in das Taxi-Programm überträgt." }
+    ],
+    centralLine: "Die Zentrale erhält es in ihrem WhatsApp, bereits geordnet. Die Telefonistin überträgt es wie heute in ihr Programm, ohne etwas nachfragen zu müssen.",
+    centralExample: "Beispielreservierung, wie sie die Telefonistin sieht",
+    centralSpanish: "Die Nachricht kommt immer auf Spanisch an, auch wenn Sie diese Seite in einer anderen Sprache nutzen.",
+
+    shopTitle: "Werkstatt und Tankstellen",
+    hoursTitle: "Öffnungszeiten",
+    hoursTaxi: "Taxi: 24 Stunden",
+    hoursStations: "Tankstellen: Montag bis Freitag 6:00–23:00 · Samstag 7:00–23:00 · Sonn- und Feiertage 7:00–22:00",
+    hoursWorkshop: "Werkstatt und Ersatzteile: Montag bis Freitag 8:00–16:00",
+    workshopName: "Kfz-Werkstatt Las Arenas",
+    workshopServices: "Allgemeine Mechanik, Elektrik und Elektronik, alle Marken.",
+    workshopTaxis: "Für Taxis: Taxameter und Drucker, Flottenverwaltung, Dachleuchten und Tarifaktualisierung.",
+    stationsName: "Tankstellen",
+    stationsServices: "Kraftstoff, Autowäsche, Autozubehör, Getränke und Snacks.",
+    stationTrompo: "Tankstelle BP El Trompo (La Orotava)",
+    stationLasArenas: "BP Las Arenas",
+    stationLasArenasNote: "Telefon und Adresse",
+    phoneWorkshop: "Werkstatt (Terminvereinbarung)",
+    phoneGeneral: "Allgemeine Telefonnummer",
+    apptTitle: "Werkstatttermin",
+    fPlate: "Kennzeichen",
+    fNeed: "Was brauchen Sie?",
+    phNeed: "z. B. Inspektion, Motorgeräusch …",
+    fDay: "Wunschtag",
+    phDay: "z. B. Montagvormittag",
+    apptBtn: "Termin per WhatsApp anfragen",
+
+    footAddress: "Adresse",
+    footMap: "Anfahrt (Karte)",
+    footDisclaimer: "Entwurf zur Ansicht. Dies ist nicht die offizielle Website von San Telmo Servicios",
+
+    barCall: "Anrufen",
+    barWa: "WhatsApp",
+    barBook: "Reservieren",
+
+    sticker: { title: "Informationen und Reservierungen", brand: "Taxi San Telmo" }
+  },
+
+  /* ------------------------------- MENSAJES DE WHATSAPP (siempre en español) */
+  wa: {
+    langNames: { es: "Español", en: "Inglés", de: "Alemán" },
+    booking: {
+      title: "RESERVA DE TAXI",
+      source: "(web)",
+      lang: "Idioma del cliente",
+      service: "Servicio",
+      day: "Día",
+      time: "Hora",
+      pickup: "Recogida",
+      dropoff: "Destino",
+      people: "Personas",
+      bags: "Maletas",
+      flight: "Vuelo",
+      extras: "Extras",
+      name: "Nombre",
+      phone: "Teléfono",
+      comments: "Comentarios"
+    },
+    route: {
+      title: "CONSULTA DE RUTA TURÍSTICA",
+      source: "(web)",
+      lang: "Idioma del cliente",
+      route: "Ruta",
+      ask: "Quisiera saber el precio y la disponibilidad."
+    },
+    appointment: {
+      title: "CITA DE TALLER",
+      source: "(web)",
+      lang: "Idioma del cliente",
+      plate: "Matrícula",
+      need: "Qué necesita",
+      day: "Día que le viene bien"
+    },
+    services: {
+      airportN: "Traslado Aeropuerto Norte",
+      airportS: "Traslado Aeropuerto Sur",
+      port: "Traslado Puerto",
+      tour: "Ruta turística",
+      event: "Boda o evento",
+      other: "Otro"
+    },
+    extras: {
+      seat: "silla de niño",
+      adapted: "vehículo adaptado",
+      large: "vehículo grande (hasta 8 plazas)"
+    },
+    routes: { teide: "Teide", anaga: "Anaga", garachico: "Garachico", masca: "Masca" },
+    empty: "—",
+    /* Datos del ejemplo de la sección «Así le llega a la central» (del BRIEF) */
+    example: {
+      lang: "de",
+      service: "airportS",
+      date: "2026-12-14",
+      time: "06:30",
+      pickup: "Hotel (nombre), Puerto de la Cruz",
+      dropoff: "Aeropuerto Tenerife Sur",
+      people: "3",
+      bags: "4",
+      flight: "XX 1234",
+      extras: ["seat"],
+      name: "Nombre Apellido",
+      phone: "+49 000 000000",
+      comments: ""
+    }
+  }
+};

@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#12283d">
+  <title>San Telmo Servicios</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="brand">
+    <h1>San Telmo Servicios</h1>
+    <p data-i="tagline"></p>
+  </div>
+  <div class="langs" role="group" data-i-aria="langLabel">
+    <button type="button" data-lang="es" aria-pressed="true">ES</button>
+    <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    <button type="button" data-lang="de" aria-pressed="false">DE</button>
+  </div>
+</header>
+
+<main>
+
+  <!-- 2. Pedir taxi ahora -->
+  <section class="card now" id="ahora" aria-labelledby="t-now">
+    <h2 id="t-now" data-i="nowTitle"></h2>
+    <a class="btn btn-call" id="btn-call" href="#">
+      <span class="btn-main" data-i="callBtn"></span>
+      <span class="btn-num" id="call-num"></span>
+    </a>
+    <a class="btn btn-ghost" id="btn-app" href="#">
+      <span data-i="appBtn"></span>
+      <span class="tag tag-pending" id="app-tag" hidden></span>
+    </a>
+    <p class="small note" id="app-note" hidden></p>
+  </section>
+
+  <!-- 3. Reservar para otro día -->
+  <section class="card" id="reservar" aria-labelledby="t-book">
+    <h2 id="t-book" data-i="bookTitle"></h2>
+    <p data-i="bookIntro"></p>
+
+    <form id="form-reserva" novalidate autocomplete="off">
+      <label class="field">
+        <span data-i="fService"></span>
+        <select id="f-service" name="service" data-req="fService"></select>
+      </label>
+
+      <label class="field">
+        <span data-i="fPickup"></span>
+        <input type="text" id="f-pickup" name="pickup" data-req="fPickup" data-i-ph="phPickup">
+      </label>
+
+      <label class="field">
+        <span data-i="fDropoff"></span>
+        <input type="text" id="f-dropoff" name="dropoff" data-req="fDropoff" data-i-ph="phDropoff">
+      </label>
+
+      <div class="row2">
+        <label class="field">
+          <span data-i="fDate"></span>
+          <input type="date" id="f-date" name="date" data-req="fDate">
+        </label>
+        <label class="field">
+          <span data-i="fTime"></span>
+          <input type="time" id="f-time" name="time" data-req="fTime">
+        </label>
+      </div>
+
+      <div class="row2">
+        <label class="field">
+          <span data-i="fPeople"></span>
+          <input type="number" id="f-people" name="people" min="1" step="1" inputmode="numeric" value="2" data-req="fPeople">
+        </label>
+        <label class="field">
+          <span data-i="fBags"></span>
+          <input type="number" id="f-bags" name="bags" min="0" step="1" inputmode="numeric" value="0">
+        </label>
+      </div>
+
+      <label class="field" id="flight-field" hidden>
+        <span data-i="fFlight"></span>
+        <input type="text" id="f-flight" name="flight" data-i-ph="phFlight" autocapitalize="characters">
+      </label>
+
+      <fieldset class="field extras">
+        <legend data-i="fExtras"></legend>
+        <label class="check"><input type="checkbox" name="extras" value="seat"><span data-i="extras.seat"></span></label>
+        <label class="check"><input type="checkbox" name="extras" value="adapted"><span data-i="extras.adapted"></span></label>
+        <label class="check"><input type="checkbox" name="extras" value="large"><span data-i="extras.large"></span></label>
+      </fieldset>
+
+      <label class="field">
+        <span data-i="fName"></span>
+        <input type="text" id="f-name" name="name" data-req="fName" autocomplete="name">
+      </label>
+
+      <label class="field">
+        <span data-i="fPhone"></span>
+        <input type="tel" id="f-phone" name="phone" data-req="fPhone" data-i-ph="phPhone" autocomplete="tel">
+      </label>
+
+      <label class="field">
+        <span data-i="fComments"></span>
+        <textarea id="f-comments" name="comments" rows="3" data-i-ph="phComments"></textarea>
+      </label>
+
+      <button type="submit" class="btn btn-wa" data-i="submit"></button>
+      <p class="small status" id="form-status" role="status" aria-live="polite"></p>
+      <p class="small" data-i="bookNote"></p>
+    </form>
+  </section>
+
+  <!-- 4. Servicios de taxi -->
+  <section class="card" id="servicios" aria-labelledby="t-serv">
+    <h2 id="t-serv" data-i="servicesTitle"></h2>
+    <ul class="list" id="services-list"></ul>
+    <div class="foto foto-wide" data-i="photoFleet" role="img"></div>
+    <h3 data-i="fleetTitle"></h3>
+    <ul class="chips" id="fleet-list"></ul>
+  </section>
+
+  <!-- 5. Tarifas al aeropuerto -->
+  <section class="card" id="tarifas" aria-labelledby="t-rates">
+    <h2 id="t-rates" data-i="ratesTitle"></h2>
+    <div class="rate">
+      <span data-i="rateNorth"></span>
+      <strong><small data-i="from"></small> 30 €</strong>
+    </div>
+    <div class="rate">
+      <span data-i="rateSouth"></span>
+      <strong><small data-i="from"></small> 100 €</strong>
+    </div>
+    <p class="small notice" data-i="ratesNotice"></p>
+  </section>
+
+  <!-- 6. Rutas turísticas -->
+  <section class="card" id="rutas" aria-labelledby="t-routes">
+    <h2 id="t-routes" data-i="routesTitle"></h2>
+    <p data-i="routesIntro"></p>
+    <p class="small note" data-i="routesSample"></p>
+    <div class="routes" id="routes-list"></div>
+  </section>
+
+  <!-- 7. Preguntas frecuentes -->
+  <section class="card" id="faq" aria-labelledby="t-faq">
+    <h2 id="t-faq" data-i="faqTitle"></h2>
+    <div id="faq-list"></div>
+  </section>
+
+  <!-- 8. Así le llega a la central -->
+  <section class="card" id="central" aria-labelledby="t-central">
+    <h2 id="t-central" data-i="centralTitle"></h2>
+    <dl class="qa" id="central-qa"></dl>
+    <p class="strong" data-i="centralLine"></p>
+    <p class="small" data-i="centralExample"></p>
+    <div class="wa-phone">
+      <div class="wa-bubble" id="wa-example" translate="no" lang="es"></div>
+    </div>
+    <p class="small note" data-i="centralSpanish"></p>
+  </section>
+
+  <!-- 9. Taller y gasolineras -->
+  <section class="card" id="taller" aria-labelledby="t-shop">
+    <h2 id="t-shop" data-i="shopTitle"></h2>
+
+    <h3 data-i="hoursTitle"></h3>
+    <ul class="list">
+      <li data-i="hoursTaxi"></li>
+      <li data-i="hoursStations"></li>
+      <li data-i="hoursWorkshop"></li>
+    </ul>
+
+    <h3 data-i="workshopName"></h3>
+    <p data-i="workshopServices"></p>
+    <p data-i="workshopTaxis"></p>
+
+    <h3 data-i="stationsName"></h3>
+    <p data-i="stationsServices"></p>
+    <ul class="list">
+      <li><strong data-i="stationTrompo"></strong><br><span id="trompo-addr"></span></li>
+      <li><strong data-i="stationLasArenas"></strong><br>
+        <span class="tag tag-pending" data-i="pending"></span>
+        <span class="small" data-i="stationLasArenasNote"></span></li>
+    </ul>
+
+    <div class="phones">
+      <a class="btn btn-ghost" id="tel-workshop" href="#"><span data-i="phoneWorkshop"></span><span class="btn-num" id="tel-workshop-num"></span></a>
+      <a class="btn btn-ghost" id="tel-trompo" href="#"><span data-i="stationTrompo"></span><span class="btn-num" id="tel-trompo-num"></span></a>
+      <a class="btn btn-ghost" id="tel-general" href="#"><span data-i="phoneGeneral"></span><span class="btn-num" id="tel-general-num"></span></a>
+    </div>
+
+    <h3 data-i="apptTitle"></h3>
+    <form id="form-cita" novalidate autocomplete="off">
+      <label class="field">
+        <span data-i="fPlate"></span>
+        <input type="text" id="c-plate" name="plate" data-req="fPlate" autocapitalize="characters">
+      </label>
+      <label class="field">
+        <span data-i="fNeed"></span>
+        <input type="text" id="c-need" name="need" data-req="fNeed" data-i-ph="phNeed">
+      </label>
+      <label class="field">
+        <span data-i="fDay"></span>
+        <input type="text" id="c-day" name="day" data-req="fDay" data-i-ph="phDay">
+      </label>
+      <button type="submit" class="btn btn-wa" data-i="apptBtn"></button>
+      <p class="small status" id="cita-status" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+</main>
+
+<!-- 10. Pie -->
+<footer class="foot">
+  <p><strong data-i="footAddress"></strong><br><span id="foot-address"></span></p>
+  <p><a id="foot-map" href="#" target="_blank" rel="noopener"><span data-i="footMap"></span></a></p>
+  <p class="disclaimer" data-i="footDisclaimer"></p>
+</footer>
+
+<!-- Barra fija (móvil): Llamar · WhatsApp · Reservar -->
+<nav class="bar" aria-label="Acciones rápidas">
+  <a class="bar-call" id="bar-call" href="#"><span data-i="barCall"></span></a>
+  <a class="bar-wa" id="bar-wa" href="#"><span data-i="barWa"></span></a>
+  <a class="bar-book" id="bar-book" href="#reservar"><span data-i="barBook"></span></a>
+</nav>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="config.js"></script>
+<script src="i18n.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
