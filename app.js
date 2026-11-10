@@ -176,25 +176,61 @@
     items.forEach(function (s) { ul.appendChild(el("li", null, s)); });
   }
 
+  /* Icono del conjunto de símbolos de index.html (#i-...). */
+  var SVG_NS = "http://www.w3.org/2000/svg";
+  function icon(name, cls) {
+    var svg = document.createElementNS(SVG_NS, "svg");
+    svg.setAttribute("class", cls || "i");
+    svg.setAttribute("aria-hidden", "true");
+    var use = document.createElementNS(SVG_NS, "use");
+    use.setAttribute("href", "#" + name);
+    svg.appendChild(use);
+    return svg;
+  }
+
+  // Un icono por servicio, en el mismo orden que servicesList (i18n.js).
+  var SERVICE_ICONS = ["i-plane", "i-users", "i-mountain", "i-calendar"];
+  function renderServices() {
+    var ul = $("services-list");
+    ul.textContent = "";
+    t("servicesList").forEach(function (s, i) {
+      var li = el("li");
+      var ic = el("span", "svc-ic");
+      ic.appendChild(icon(SERVICE_ICONS[i] || "i-check"));
+      li.appendChild(ic);
+      li.appendChild(el("span", null, s));
+      ul.appendChild(li);
+    });
+  }
+
   function renderRoutes() {
     var box = $("routes-list");
     box.textContent = "";
     ["teide", "anaga", "garachico", "masca"].forEach(function (key) {
       var card = el("article", "route");
-      var photo = el("div", "foto", t("photoRoute") + ": " + t("routes." + key));
-      photo.setAttribute("role", "img");
-      card.appendChild(photo);
-      card.appendChild(el("h3", null, t("routes." + key)));
+
+      var art = el("div", "route-art route-art--" + key);
+      art.setAttribute("role", "img");
+      art.setAttribute("aria-label", t("photoRoute") + ": " + t("routes." + key));
+      art.appendChild(el("span", "route-art-tag", t("photoRoute")));
+      art.appendChild(icon("art-land", ""));
+      card.appendChild(art);
+
+      var body = el("div", "route-body");
+      body.appendChild(el("h3", null, t("routes." + key)));
       var meta = el("p", "small");
       meta.appendChild(el("span", "tag", t("routeExample")));
       meta.appendChild(document.createTextNode(" " + t("routeDuration")));
-      card.appendChild(meta);
-      var btn = el("button", "btn btn-wa", t("routeBtn"));
+      body.appendChild(meta);
+      var btn = el("button", "btn btn-wa");
       btn.type = "button";
+      btn.appendChild(icon("i-chat"));
+      btn.appendChild(el("span", null, t("routeBtn")));
       btn.addEventListener("click", function () {
         openWhatsApp(waNumber("central"), buildRoute(key, lang), null);
       });
-      card.appendChild(btn);
+      body.appendChild(btn);
+      card.appendChild(body);
       box.appendChild(card);
     });
   }
@@ -217,8 +253,10 @@
     var dl = $("central-qa");
     dl.textContent = "";
     t("centralQ").forEach(function (item) {
-      dl.appendChild(el("dt", null, item.q));
-      dl.appendChild(el("dd", null, item.a));
+      var row = el("div", "qa-item");
+      row.appendChild(el("dt", null, item.q));
+      row.appendChild(el("dd", null, item.a));
+      dl.appendChild(row);
     });
     renderWa($("wa-example"), buildBooking(T.wa.example, T.wa.example.lang));
   }
@@ -252,7 +290,7 @@
       b.setAttribute("aria-pressed", b.getAttribute("data-lang") === code ? "true" : "false");
     });
     renderServiceSelect();
-    fillList("services-list", t("servicesList"));
+    renderServices();
     fillList("fleet-list", t("fleetList"));
     renderRoutes();
     renderFaq();
@@ -273,6 +311,7 @@
     var P = CFG.phones;
     setPhone("btn-call", "call-num", P.central);
     setPhone("bar-call", null, P.central);
+    setPhone("nav-call", "nav-call-num", P.central);
     setPhone("tel-workshop", "tel-workshop-num", P.taller);
     setPhone("tel-trompo", "tel-trompo-num", P.trompo);
     setPhone("tel-general", "tel-general-num", P.general);
